@@ -9,16 +9,14 @@
             <h1><a href="">MuffinBlog</a></h1>
         </div>
 
-        <div>
-            <p>Published: 16.03.2016, 14:32</p>
-            <h2><a href="">My first post</a></h2>
-            <p>wehf jgrial kgjriag oktnes</p>
-        </div>
 
-        <div>
-            <p>Published: 16.03.2016, 14:32</p>
-            <h2><a href="">My second post</a></h2>
-            <p>noen inwefuhamg oijreg jgiojah jofoahgu</p>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a></h1>
+                <p>{{post.text|linebreaks }}</p>
+            </div>
+
+        {% endfor %}
     </body>
 </html>
